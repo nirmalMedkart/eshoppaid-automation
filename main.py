@@ -56,6 +56,8 @@ if __name__ == "__main__":
 
      
     input_path = r"C:\Nirmal\Python\eshopaid pos\v.xlsx"
+    # input_path = input("Enter file path with file name: ")
+
     df = fileToDf(input_path)
 
     options = webdriver.ChromeOptions()
@@ -118,7 +120,7 @@ if __name__ == "__main__":
         input_element = driver.find_element(By.XPATH,gift_voucher_type)
         value_to_send = '01_WA_CASH_IN_WALLET_WONDERSOFT_OFFER_ACTIVATION'
         driver.execute_script("arguments[0].value = arguments[1]", input_element, value_to_send)
-        time.sleep(4)
+        time.sleep(8)
         input_element.send_keys(Keys.ENTER)
 
 

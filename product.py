@@ -162,7 +162,7 @@ if __name__ == "__main__":
         tax_category = driver.find_element(By.XPATH,tax_category_xpath)
         tax_category.clear()
         tax_category.send_keys('1234_0')
-        time.sleep(10)
+        time.sleep(15)
         input_element.send_keys(Keys.ENTER)
         
         chapter_number = driver.find_element(By.XPATH,chapter_number_xpath)
@@ -180,13 +180,13 @@ if __name__ == "__main__":
         driver.find_element(By.XPATH,'//*[@id="btnUpdate"]').click()
 
         
-        alert = WebDriverWait(driver, 5).until(expected_conditions.alert_is_present())
+        alert = WebDriverWait(driver, 10).until(expected_conditions.alert_is_present())
         
         msg = alert.text
-        time.sleep(15)
+        time.sleep(10)
         alert.accept()
         time.sleep(5)
         product_code += 1
-        logging.info(f'===> {msg}')
+       
             
     driver.close()
